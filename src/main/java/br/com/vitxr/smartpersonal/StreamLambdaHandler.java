@@ -1,4 +1,4 @@
-package org.example;
+package br.com.vitxr.smartpersonal;
 
 
 import com.amazonaws.serverless.exceptions.ContainerInitializationException;

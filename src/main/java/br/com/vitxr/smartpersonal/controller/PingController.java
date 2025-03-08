@@ -1,4 +1,4 @@
-package org.example.controller;
+package br.com.vitxr.smartpersonal.controller;
 
 
 import org.springframework.web.bind.annotation.*;

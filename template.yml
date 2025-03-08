@@ -1,15 +1,15 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: AWS Serverless Spring Boot 2 API - org.example::smartpersonal
+Description: AWS Serverless Spring Boot 2 API - br.com.vitxr.smartpersonal::smartpersonal
 Globals:
   Api:
     EndpointConfiguration: REGIONAL
 
 Resources:
-  SmartpersonalFunction:
+  SmartPersonalFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: org.example.StreamLambdaHandler::handleRequest
+      Handler: br.com.vitxr.smartpersonal.StreamLambdaHandler::handleRequest
       Runtime: java21
       CodeUri: .
       MemorySize: 512
@@ -23,8 +23,8 @@ Resources:
             Method: any
 
 Outputs:
-  SmartpersonalApi:
+  SmartPersonalApi:
     Description: URL for application
     Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/prod/'
     Export:
-      Name: SmartpersonalApi
+      Name: SmartPersonalApi

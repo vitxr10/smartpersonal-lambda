@@ -1,4 +1,4 @@
-package org.example.entity;
+package br.com.vitxr.smartpersonal.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
