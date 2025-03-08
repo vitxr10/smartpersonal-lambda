@@ -1,0 +1,32 @@
+{
+  "resource": "/ping",
+  "path": "/ping",
+  "httpMethod": "GET",
+  "headers": {
+    "Accept": "application/json",
+    "User-Agent": "Custom User Agent String",
+    "Host": "1234567890.execute-api.{dns_suffix}"
+  },
+  "queryStringParameters": {
+    "foo": "bar"
+  },
+  "pathParameters": null,
+  "stageVariables": {
+    "baz": "qux"
+  },
+  "requestContext": {
+    "accountId": "123456789012",
+    "resourceId": "abcdef",
+    "stage": "prod",
+    "requestId": "c6af9ac6-7b61-11e6-9a41-93e8deadbeef",
+    "identity": {
+      "sourceIp": "127.0.0.1",
+      "userAgent": "Custom User Agent String"
+    },
+    "resourcePath": "/ping",
+    "httpMethod": "GET",
+    "apiId": "1234567890"
+  },
+  "body": null,
+  "isBase64Encoded": false
+}
