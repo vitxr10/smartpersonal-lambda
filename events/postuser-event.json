@@ -1,0 +1,35 @@
+{
+  "body": "{\"name\":\"John Doe\",\"email\":\"johndoe@example.com\",\"password\":\"securePass123\"}",
+  "resource": "/users",
+  "path": "/users",
+  "httpMethod": "POST",
+  "queryStringParameters": null,
+  "pathParameters": null,
+  "stageVariables": null,
+  "headers": {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "content-type": "application/json",
+    "User-Agent": "Custom User Agent String",
+    "X-Forwarded-For": "127.0.0.1",
+    "X-Forwarded-Port": "443",
+    "X-Forwarded-Proto": "https"
+  },
+  "multiValueHeaders": {
+    "Content-Type": ["application/json"]
+  },
+  "requestContext": {
+    "accountId": "123456789012",
+    "resourceId": "users",
+    "stage": "prod",
+    "requestId": "c6af9ac6-7b61-11e6-9a41-93e8deadbeef",
+    "identity": {
+      "sourceIp": "127.0.0.1",
+      "userAgent": "Custom User Agent String"
+    },
+    "resourcePath": "/users",
+    "httpMethod": "POST",
+    "apiId": "1234567890"
+  },
+  "isBase64Encoded": false
+}

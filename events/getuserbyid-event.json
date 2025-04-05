@@ -1,0 +1,31 @@
+{
+  "body": "",
+  "resource": "/users",
+  "path": "/users/",
+  "httpMethod": "GET",
+  "queryStringParameters": null,
+  "pathParameters": null,
+  "stageVariables": null,
+  "headers": {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "User-Agent": "Custom User Agent String",
+    "X-Forwarded-For": "127.0.0.1",
+    "X-Forwarded-Port": "443",
+    "X-Forwarded-Proto": "https"
+  },
+  "requestContext": {
+    "accountId": "123456789012",
+    "resourceId": "users",
+    "stage": "prod",
+    "requestId": "aff15962-bec0-45e1-811e-61d8b79ab769",
+    "identity": {
+      "sourceIp": "127.0.0.1",
+      "userAgent": "Custom User Agent String"
+    },
+    "resourcePath": "/users/{id}",
+    "httpMethod": "GET",
+    "apiId": "1234567890"
+  },
+  "isBase64Encoded": false
+}
