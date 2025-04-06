@@ -35,10 +35,13 @@ public class UsersController {
     public ResponseEntity<String> getById(@PathVariable String id){
         var user = userRepository.getById(id);
 
-        if (user == null)
+        if (user == null){
+            logger.info("Usuário de id {} não encontrado.", id);
             return ResponseEntity.notFound().build();
+        }
 
         var userJson = gson.toJson(user);
+        logger.info("Retornando usuário: {}", userJson);
 
         return new ResponseEntity<>(userJson, HttpStatusCode.valueOf(200));
     }
@@ -52,5 +55,33 @@ public class UsersController {
         logger.info("Usuario criado {}", userJson);
 
         return new ResponseEntity<>(userJson, HttpStatusCode.valueOf(201));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<String> put(@PathVariable String id, @RequestBody User user){
+        var updatedUser = userRepository.update(user);
+
+        if (updatedUser == null){
+            logger.info("Usuário com id {} não encontrado.", user.getId());
+            return ResponseEntity.notFound().build();
+        }
+
+        var userJson = gson.toJson(updatedUser);
+        logger.info("Usuário atualizado: {}", userJson);
+
+        return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable String id){
+        var userIsDeleted = userRepository.delete(id);
+
+        if (!userIsDeleted){
+            logger.info("Usuário de id {} não encontrado.", id);
+            return ResponseEntity.notFound().build();
+        }
+
+        logger.info("Usuário {} deletado com sucesso.", id);
+        return ResponseEntity.noContent().build();
     }
 }

@@ -29,17 +29,16 @@ public class User {
     @DynamoDBAttribute
     private String password;
 
-//    @DynamoDBAttribute
-//    @DynamoDBTypeConverted(converter = LocalDateConverter.class)  // Conversão adicionada aqui
-//    private LocalDate birthday;
-//
-//    @DynamoDBTyped(DynamoDBMapperFieldModel.DynamoDBAttributeType.N)
-//    private double height;
-//
-//    @DynamoDBTyped(DynamoDBMapperFieldModel.DynamoDBAttributeType.N)
-//    private double weight;
-//
-//    @DynamoDBTyped(DynamoDBMapperFieldModel.DynamoDBAttributeType.BOOL)
-//    private boolean active;
+    @DynamoDBAttribute
+    private String birthday; // formato ISO-8601 recomendado, ex: "1999-08-15"
+
+    @DynamoDBAttribute
+    private Double height;
+
+    @DynamoDBAttribute
+    private Double weight;
+
+    @DynamoDBAttribute
+    private Boolean active;
 
 }

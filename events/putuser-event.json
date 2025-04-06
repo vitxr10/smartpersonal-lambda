@@ -1,10 +1,12 @@
 {
-  "body": "{\"name\":\"Mano Deyvin\",\"email\":\"mano@email.com\",\"password\":\"securePass123\",\"birthday\":\"1999-08-15\",\"height\":1.80,\"weight\":80}",
-  "resource": "/users",
-  "path": "/users",
-  "httpMethod": "POST",
+  "body": "{\"id\":\"f3193002-ad98-4acd-a4a9-cdd599f16954\",\"name\":\"Mano Deyvin\",\"email\":\"mano@email.com\",\"password\":\"newPass456\",\"birthday\":\"1999-08-15\",\"height\":1.85,\"weight\":90,\"active\":true}",
+  "resource": "/users/{id}",
+  "path": "/users/f3193002-ad98-4acd-a4a9-cdd599f16954",
+  "httpMethod": "PUT",
   "queryStringParameters": null,
-  "pathParameters": null,
+  "pathParameters": {
+    "id": "f3193002-ad98-4acd-a4a9-cdd599f16954"
+  },
   "stageVariables": null,
   "headers": {
     "Accept": "application/json",
@@ -27,8 +29,8 @@
       "sourceIp": "127.0.0.1",
       "userAgent": "Custom User Agent String"
     },
-    "resourcePath": "/users",
-    "httpMethod": "POST",
+    "resourcePath": "/users/{id}",
+    "httpMethod": "PUT",
     "apiId": "1234567890"
   },
   "isBase64Encoded": false

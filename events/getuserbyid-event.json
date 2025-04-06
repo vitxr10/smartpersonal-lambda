@@ -1,10 +1,12 @@
 {
   "body": "",
-  "resource": "/users",
-  "path": "/users/",
+  "resource": "/users/{id}",
+  "path": "/users/6b98196a-e2fc-4b8a-a4df-c0d8a6d5a67f",
   "httpMethod": "GET",
   "queryStringParameters": null,
-  "pathParameters": null,
+  "pathParameters": {
+    "id": "6b98196a-e2fc-4b8a-a4df-c0d8a6d5a67f"
+  },
   "stageVariables": null,
   "headers": {
     "Accept": "application/json",
@@ -18,7 +20,7 @@
     "accountId": "123456789012",
     "resourceId": "users",
     "stage": "prod",
-    "requestId": "aff15962-bec0-45e1-811e-61d8b79ab769",
+    "requestId": "c6af9ac6-7b61-11e6-9a41-93e8deadbeef",
     "identity": {
       "sourceIp": "127.0.0.1",
       "userAgent": "Custom User Agent String"

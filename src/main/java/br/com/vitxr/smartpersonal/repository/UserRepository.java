@@ -26,7 +26,7 @@ public class UserRepository {
 
     public User create(User user) {
         logger.info("Salvando usuário no banco de dados...");
-//        user.setActive(true);
+        user.setActive(true);
         mapper.save(user);
         return user;
     }
@@ -37,23 +37,34 @@ public class UserRepository {
     }
 
     public User getById(String id) {
+        logger.info("Buscando usuário de id: {} no banco de dados...", id);
         return mapper.load(User.class, id);
     }
 
-    public void delete(User user) {
-        mapper.delete(user);
+    public boolean delete(String id) {
+        logger.info("Buscando usuário com id: {}", id);
+        User user = mapper.load(User.class, id);
+
+        if (user == null) {
+            return false;
+        }
+
+        user.setActive(false);
+        return true;
     }
 
-    public User update(User user) {
-        mapper.save(user, buildExpression(user));
-        return user;
-    }
+    public User update(User updatedData) {
+        logger.info("Buscando usuário com id: {}", updatedData.getId());
+        User existing = mapper.load(User.class, updatedData.getId());
 
-    private DynamoDBSaveExpression buildExpression(User user) {
-        DynamoDBSaveExpression dynamoDBSaveExpression = new DynamoDBSaveExpression();
-        Map<String, ExpectedAttributeValue> expectedMap = new HashMap<>();
-        expectedMap.put("id", new ExpectedAttributeValue(new AttributeValue().withS(String.valueOf(user.getId()))));
-        dynamoDBSaveExpression.setExpected(expectedMap);
-        return dynamoDBSaveExpression;
+        if (existing == null) {
+            return null;
+        }
+
+        existing.setHeight(updatedData.getHeight());
+        existing.setWeight(updatedData.getWeight());
+
+        mapper.save(existing);
+        return existing;
     }
 }
